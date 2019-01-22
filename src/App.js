@@ -12,7 +12,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch("http://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=14")
+    fetch("https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC&limit=14")
       .then(res => res.json())
       .then(data => {
         this.setState({ gifs: data.data });
@@ -22,7 +22,7 @@ export default class App extends Component {
 
   searchHandler = value => {
     fetch(
-      `http://api.giphy.com/v1/gifs/search?q=${value}&limit=14&api_key=dc6zaTOxFJmzC`
+      `https://api.giphy.com/v1/gifs/search?q=${value}&limit=14&api_key=dc6zaTOxFJmzC`
     )
       .then(res => res.json())
       .then(data => this.setState({ gifs: data.data }));
